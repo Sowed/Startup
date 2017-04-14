@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Enterprise App</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,400,700|Montserrat:100,200,400,500,700,900|Raleway:300,400,600,700,900|Source+Sans+Pro:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+    <h1>Enterprise</h1>
+    <p id="messaged">Message</p>
+</body>
+<script>
+let node = process.versions.node,
+    chromium = process.versions.chrome,
+    electron = process.versions.electron;
+document.getElementById('messaged').innerHTML = ('Node: ' + chromium + 'Chromium: ' + electron + 'Electron: ' + electron);
+require('./renderer.js');
+</script>
+
+</html>
