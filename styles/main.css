@@ -20,22 +20,134 @@ h1 {
     font-size: 72px;
 }
 
-h4 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-    font-size: 10px;
-    text-transform: uppercase;
-    color: #0f0;
-}
-
 html.splash {
     cursor: wait;
     user-select: none;
 }
 
+html.splash h1 {
+    margin-top: 100px;
+    margin-left: -8px;
+}
+
+.splash-message {
+    font-family: 'Lato', sans-serif;
+    font-size: 10px;
+    font-weight: lighter;
+}
+
+html.splash h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+    font-size: 9px;
+    color: #0ff;
+}
+
+.splash body {
+    -webkit-text-size-adjust: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    background: #00B7FF;
+    background: -webkit-radial-gradient(#2b2b2b 25%, #0FBFB7 30%, #00746D 50%);
+    background: -o-radial-gradient(#2b2b2b 25%, #0FBFB7 60%, #00746D 80%);
+    background: -moz-radial-gradient(#2b2b2b 25%, #0FBFB7 60%, #00B7FF 80%);
+    background: radial-gradient(#5dd 20%, #599 40%, #555 60%, #2b2b2b 80%);
+    background-size: 600% 600%;
+    -webkit-animation: GradAnimation 100s ease infinite;
+    -moz-animation: GradAnimation 100s ease infinite;
+    -o-animation: GradAnimation 100s ease infinite;
+    animation: GradAnimation 100s ease infinite;
+}
+
+@-webkit-keyframes GradAnimation {
+    0% {
+        background-position: 0 15%;
+        color: #ff0;
+    }
+    50% {
+        background-position: 100% 86%;
+        color: rgb(214, 255, 250);
+    }
+    100% {
+        background-position: 0 15%;
+        color: #f0f;
+    }
+}
+
+@-moz-keyframes GradAnimation {
+    0% {
+        background-position: 0 5%;
+        color: #fff;
+    }
+    80% {
+        background-position: 100% 95%;
+        color: rgb(214, 255, 250);
+    }
+    100% {
+        background-position: 0 15%;
+        color: #fff;
+    }
+}
+
+@-o-keyframes GradAnimation {
+    0% {
+        background-position: 0 15%;
+        color: #0ff;
+    }
+    20% {
+        background-position: 100% 86%;
+        color: rgb(214, 255, 250);
+    }
+    40% {
+        background-position: 0 15%;
+        color: #ff0;
+    }
+    60% {
+        background-position: 0 15%;
+        color: #0ff;
+    }
+    80% {
+        background-position: 100% 86%;
+        color: rgb(214, 255, 250);
+    }
+    100% {
+        background-position: 0 15%;
+        color: #ff0;
+    }
+}
+
+@keyframes GradAnimation {
+    0% {
+        background-position: 100% 86%;
+        color: #fff;
+    }
+    20% {
+        background-position: 100% 86%;
+        color: #ccc;
+    }
+    40% {
+        background-position: 0 15%;
+        color: #0ff;
+    }
+    60% {
+        background-position: 0 15%;
+        color: #999;
+    }
+    80% {
+        background-position: 100% 86%;
+        color: #222;
+    }
+    100% {
+        background-position: 100% 86%;
+        color: #000;
+    }
+}
+
 html.main {
     user-select: none;
 }
-.main body{
-    background: #eee;
+
+.main body {
+    background: #aaa;
+    color: #000;
 }

@@ -11,6 +11,7 @@ const url = require('url');
 // be closed automatically when the JavaScript object is garbage collected.
 
 let splashWindow;
+let mainWindow;
 
 function createSplashWindow() {
     // Create the browser window.
@@ -58,7 +59,7 @@ function createMainWindow() {
     });
 }
 
-app.on('ready', createMainWindow);
+app.on('ready', createSplashWindow);
 
 app.on('window-all-closed', function() {
     if (process.platform !== 'darwin') {
@@ -67,8 +68,8 @@ app.on('window-all-closed', function() {
 });
 
 app.on('activate', function() {
-    if (splashWindow === null) {
-        createSplashWindow();
+    if (mainWindow === null) {
+        createMainWindow();
     }
 });
 
