@@ -52,7 +52,7 @@ function createMainWindow() {
         slashes: true
     }));
 
-    // splashWindow.webContents.openDevTools()
+    mainWindow.webContents.openDevTools()
 
     mainWindow.on('closed', function() {
         mainWindow = null;

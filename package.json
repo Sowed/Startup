@@ -1,7 +1,7 @@
 {
     "name": "Startup",
     "version": "1.0.0",
-    "description": "Frontend for Enterprise App, built with Electron",
+    "description": "Frontend for SACCO Enterprise App, built with Electron",
     "main": "main.js",
     "scripts": {
         "start": "electron ."
