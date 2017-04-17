@@ -59,7 +59,7 @@ function createMainWindow() {
     });
 }
 
-app.on('ready', createSplashWindow);
+app.on('ready', createMainWindow);
 
 app.on('window-all-closed', function() {
     if (process.platform !== 'darwin') {
