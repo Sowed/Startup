@@ -3,7 +3,7 @@
 
 const fs = require('fs'),
     contents = fs.readFileSync('./package.json', 'utf8');
-//alert(contents);
+alert(contents);
 
 const remote = require('electron').remote,
     Menu =  require('electron').menu;
@@ -19,3 +19,5 @@ let menu = Menu.buildFromTemplate([{
         }
     ]
 }]);
+console.log(menu);
+Menu.setApplicationMenu(menu);
