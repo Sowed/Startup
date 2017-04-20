@@ -23,6 +23,8 @@ function createSplashWindow() {
         backgroundColor: '#2b2b2b',
         transparent: true,
         thickFrame: true,
+        parent: mainWindow,
+        modal: true,
         show: false
 
     });
@@ -52,6 +54,10 @@ function createMainWindow(splash) {
     mainWindow = new BrowserWindow({
         width: 1000,
         height: 600,
+        backgroundColor: '#aaa',
+        title: 'SACCO  |  Welcome',
+        icon: '',
+        autoHideMenuBar: true,
         show: false
     });
 
@@ -69,16 +75,23 @@ function createMainWindow(splash) {
 
     mainWindow.once('ready-to-show', () => {
         mainWindow.show();
-        splash.close();
-
+        if (splash !== null) {
+            splash.close();
+            setTimeout(function () {
+                console.log('The SACCO is fully loaded');
+                mainWindow.setTitle('Welcome');
+                mainWindow.setSkipTaskbar(true);
+                mainWindow.setIgnoreMouseEvents(true);
+            }, 5000);
+        }
     });
 }
 
-app.on('ready', function(){
+app.on('ready', function () {
     createSplashWindow();
     setTimeout(function () {
         createMainWindow(splashWindow);
-    }, 5000);
+    }, 1000);
 
 });
 
