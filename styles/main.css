@@ -1,3 +1,24 @@
+html {
+    font-size: 12px;
+}
+/*
+@include media-breakpoint-up(sm) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    html {
+        font-size: 20px;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    html {
+        font-size: 28px;
+    }
+}*/
 body {
     background: #2b2b2b;
     color: #eee;
@@ -9,15 +30,15 @@ body {
 
 body,
 p {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Sofia Pro Light', sans-serif;
     font-weight: 400;
-    font-size: 14px;
+    //font-size: 14px;
 }
 
 h1 {
     font-family: 'Lato', sans-serif;
     font-weight: 100;
-    font-size: 72px;
+/ / font-size: 72 px;
 }
 
 html.splash {
@@ -28,6 +49,7 @@ html.splash {
 html.splash h1 {
     margin-top: 100px;
     margin-left: -8px;
+    font-size: 72px;
 }
 
 .splash-message {
@@ -52,11 +74,11 @@ html.splash h4 {
     background: -o-radial-gradient(#2b2b2b 25%, #0FBFB7 60%, #00746D 80%);
     background: -moz-radial-gradient(#2b2b2b 25%, #0FBFB7 60%, #00B7FF 80%);
     background: radial-gradient(#5dd 20%, #599 40%, #555 60%, #2b2b2b 80%);
-    background-size: 600% 600%;
-    -webkit-animation: GradAnimation 100s ease infinite;
-    -moz-animation: GradAnimation 100s ease infinite;
-    -o-animation: GradAnimation 100s ease infinite;
-    animation: GradAnimation 100s ease infinite;
+    background-size: 400% 400%;
+    -webkit-animation: GradAnimation 10s ease infinite;
+    -moz-animation: GradAnimation 10s ease infinite;
+    -o-animation: GradAnimation 10s ease infinite;
+    animation: GradAnimation 10s ease infinite;
 }
 
 @-webkit-keyframes GradAnimation {
