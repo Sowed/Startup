@@ -79,6 +79,7 @@ html.splash h4 {
     -moz-animation: GradAnimation 10s ease infinite;
     -o-animation: GradAnimation 10s ease infinite;
     animation: GradAnimation 10s ease infinite;
+    -webkit-app-region: drag;
 }
 
 @-webkit-keyframes GradAnimation {
