@@ -1,7 +1,7 @@
 const electron = require('electron');
-    // Module to control application life.
+// Module to control application life.
 const app = electron.app;
-    // Module to create native browser window.
+// Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow;
 
 const path = require('path');
@@ -18,32 +18,41 @@ function createSplashWindow() {
     splashWindow = new BrowserWindow({
         width: 500,
         height: 300,
-        frame: false
-    })
+        frame: false,
+        resizable: false,
+        backgroundColor: '#2b2b2b',
+        transparent: true,
+        thickFrame: true,
+        show: false
+
+    });
 
     // and load the index.html of the app.
     splashWindow.loadURL(url.format({
         pathname: path.join(__dirname, 'index.html'),
         protocol: 'file:',
         slashes: true
-    }))
+    }));
 
-    // Open the DevTools.
-    // splashWindow.webContents.openDevTools()
+    splashWindow.once('ready-to-show', () => {
+        splashWindow.show();
+    });
 
     // Emitted when the window is closed.
-    splashWindow.on('closed', function() {
+    splashWindow.on('closed', function () {
         // Dereference the window object, usually you would store windows
         // in an array if your app supports multi windows, this is the time
         // when you should delete the corresponding element.
         splashWindow = null
-    })
+    });
+
 }
 
-function createMainWindow() {
+function createMainWindow(splash) {
     mainWindow = new BrowserWindow({
         width: 1000,
-        height: 600
+        height: 600,
+        show: false
     });
 
     mainWindow.loadURL(url.format({
@@ -52,27 +61,35 @@ function createMainWindow() {
         slashes: true
     }));
 
-    mainWindow.webContents.openDevTools()
+    //mainWindow.webContents.openDevTools()
 
-    mainWindow.on('closed', function() {
+    mainWindow.on('closed', function () {
         mainWindow = null;
+    });
+
+    mainWindow.once('ready-to-show', () => {
+        mainWindow.show();
+        splash.close();
+
     });
 }
 
-app.on('ready', createMainWindow);
+app.on('ready', function(){
+    createSplashWindow();
+    setTimeout(function () {
+        createMainWindow(splashWindow);
+    }, 5000);
 
-app.on('window-all-closed', function() {
+});
+
+app.on('window-all-closed', function () {
     if (process.platform !== 'darwin') {
         app.quit();
     }
 });
 
-app.on('activate', function() {
+app.on('activate', function () {
     if (mainWindow === null) {
         createMainWindow();
     }
 });
-
-setTimeout(function() {
-    console.log(app);
-}, 10000);
