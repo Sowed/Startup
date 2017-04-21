@@ -1,8 +1,9 @@
 const electron = require('electron');
+
 // Module to control application life.
-const app = electron.app;
 // Module to create native browser window.
-const BrowserWindow = electron.BrowserWindow;
+// Module to create native Menu.
+const {app, BrowserWindow, Menu} = electron;
 
 const path = require('path');
 const url = require('url');
@@ -55,12 +56,13 @@ function createMainWindow(splash) {
     mainWindow = new BrowserWindow({
         width: 1000,
         height: 600,
-        minWidth: 600,
-        minHeight: 400,
+        minWidth: 800,
+        minHeight: 500,
         backgroundColor: '#aaa',
         title: 'SACCO  |  Welcome',
         icon: '',
         autoHideMenuBar: true,
+        maximized: true,
         show: false
     });
 
