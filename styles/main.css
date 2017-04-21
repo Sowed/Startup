@@ -1,6 +1,7 @@
 html {
     font-size: 12px;
 }
+
 /*
 @include media-breakpoint-up(sm) {
     html {
@@ -32,13 +33,139 @@ body,
 p {
     font-family: 'Sofia Pro Light', sans-serif;
     font-weight: 400;
-    //font-size: 14px;
 }
 
 h1 {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Brandon Grotesque Light', Lato, sans-serif;
     font-weight: 100;
-/ / font-size: 72 px;
+    font-size: 72px;
+}
+
+/*Styling Scrollbars
+THE STATES
+---------------------
+:horizontal
+:vertical
+:decrement
+:increment
+:start
+:end
+:double-button
+:single-button
+:no-button
+:corner-present
+:window-inactive
+*/
+
+html.main {
+    user-select: none;
+}
+
+.main body {
+    background: #eee;
+    color: #333;
+}
+
+body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0px;
+    overflow-x: hidden;
+}
+
+html {
+    overflow-y: auto;
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-button { /* 2 */
+}
+
+::-webkit-scrollbar-track-piece { /* 4 */
+}
+
+::-webkit-scrollbar-thumb { /* 5 */
+}
+
+::-webkit-scrollbar-corner { /* 6 */
+}
+
+::-webkit-resizer { /* 7 */
+}
+
+::-webkit-scrollbar-track-piece:start {
+    /* Select the top half (or left half) or scrollbar track individually */
+    -webkit-box-shadow: inset 0 0 6px rgba(132, 0, 132, 0.6);
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-button:horizontal:decrement:hover {
+    /* Select the down or left scroll button when it's being hovered by the mouse */
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 200, 220, 0.9);
+    border-radius: 2px;
+    background-color: #f80;
+    cursor: pointer !important;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    cursor: pointer !important;
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgba(100, 100, 100, 0.2);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-button:start:decrement,
+::-webkit-scrollbar-button:end:increment {
+    height: 10px;
+    display: block;
+    background-color: #888;
+}
+
+::-webkit-scrollbar-track-piece {
+    background-color: rgba(100, 100, 100, 0.2);
+    -webkit-border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+    background-color: rgba(200, 200, 200, 0.8);
+    border: 1px inset #aaa;
+}
+
+::-webkit-scrollbar-thumb:vertical:hover {
+    background-color: #888;
+    border: 1px inset #777;
+    cursor: pointer !important;
+}
+
+::-webkit-scrollbar:window-inactive,
+::-webkit-scrollbar-track:window-inactive,
+::-webkit-scrollbar-button:window-inactive,
+::-webkit-scrollbar-track-piece:window-inactive,
+::-webkit-scrollbar-thumb:window-inactive,
+::-webkit-scrollbar-thumb:vertical:window-inactive,
+::-webkit-scrollbar-button:start:decrement:window-inactive,
+::-webkit-scrollbar-button:end:increment:window-inactive,
+::-webkit-scrollbar-button:end:increment:window-inactive {
+    -webkit-box-shadow: none;
+    border-radius: 0;
+    background-color: transparent;
+    border: none;
 }
 
 html.splash {
@@ -66,6 +193,7 @@ html.splash h4 {
 }
 
 .splash body {
+    position: relative;
     -webkit-text-size-adjust: none;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -188,13 +316,4 @@ html.splash h4 {
         background-position: 100% 86%;
         color: #000;
     }
-}
-
-html.main {
-    user-select: none;
-}
-
-.main body {
-    background: #eee;
-    color: #333;
 }
