@@ -84,17 +84,17 @@ function createMainWindow(splash) {
         title: 'SACCO  |  Welcome',
         icon: '',
         autoHideMenuBar: true,
-        maximized: true,
         show: false
     });
 
     mainWindow.loadURL(url.format({
-        pathname: path.join(__dirname, 'main.html'),
+        //pathname: path.join(__dirname, 'main.html'),
+        pathname: path.join(__dirname, './trials/forms.html'),
         protocol: 'file:',
         slashes: true
     }));
 
-    //mainWindow.webContents.openDevTools()
+    //mainWindow.webContents.openDevTools();
 
     //Setup custom menu for mainWindow
     let mainMenu = Menu.buildFromTemplate(menuTemplate);
@@ -105,14 +105,16 @@ function createMainWindow(splash) {
     });
 
     mainWindow.once('ready-to-show', () => {
+        mainWindow.maximize();
         mainWindow.show();
-        if (splash !== null) {
+        if (splash !== undefined && splash !== null) {
             splash.close();
             setTimeout(function () {
                 //console.log('The SACCO is fully loaded');
                 //mainWindow.setTitle('Welcome');
                 //mainWindow.setSkipTaskbar(true);
                 //mainWindow.setIgnoreMouseEvents(true);
+
             }, 2000);
         }
     });
