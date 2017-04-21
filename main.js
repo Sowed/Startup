@@ -14,6 +14,29 @@ const url = require('url');
 let splashWindow;
 let mainWindow;
 
+let menuTemplate = [
+    {
+        label: 'Startup',
+        submenu: [
+            {
+                label: 'Settings',
+                click: () => {
+                    console.log('No settings yet');
+                }
+            },
+            {
+                label: 'About',
+                click: () => {
+                    createSplashWindow();
+                    setTimeout(function () {
+                        splashWindow.close();
+                    }, 10000);
+                }
+            }
+        ]
+    }
+];
+
 function createSplashWindow() {
     // Create the browser window.
     splashWindow = new BrowserWindow({
@@ -73,6 +96,10 @@ function createMainWindow(splash) {
     }));
 
     //mainWindow.webContents.openDevTools()
+
+    //Setup custom menu for mainWindow
+    let mainMenu = Menu.buildFromTemplate(menuTemplate);
+    mainWindow.setMenu(mainMenu);
 
     mainWindow.on('closed', function () {
         mainWindow = null;
