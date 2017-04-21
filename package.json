@@ -1,22 +1,25 @@
 {
-    "name": "Startup",
-    "version": "1.0.0",
-    "description": "Frontend for SACCO Enterprise App, built with Electron",
-    "main": "main.js",
-    "scripts": {
-        "start": "electron ."
-    },
-    "repository": "https://github.com/sowed/Startup",
-    "keywords": [
-        "Electron",
-        "Startup",
-        "Enterprise App",
-        "Desktop Version"
-    ],
-    "author": "Sowed Castelli",
-    "license": "CC0-1.0",
-    "devDependencies": {
-        "electron": "~1.6.7",
-        "tether" : "~1.3.3"
-    }
+  "name": "Startup",
+  "version": "1.0.0",
+  "description": "Frontend for SACCO Enterprise App, built with Electron",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/sowed/Startup",
+  "keywords": [
+    "Electron",
+    "Startup",
+    "Enterprise App",
+    "Desktop Version"
+  ],
+  "author": "Sowed Castelli",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "~1.6.7",
+    "tether": "~1.3.3"
+  },
+  "dependencies": {
+    "nedb": "^1.8.0"
+  }
 }
