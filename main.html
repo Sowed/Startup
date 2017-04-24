@@ -9,108 +9,230 @@
           rel="stylesheet">
     <link rel="stylesheet" href="styles/bootstrap.css">
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/themify-icons.css">
 </head>
 
 <body>
-<div class="container-fluid"
-     style="font-family: 'Sofia Pro', Lato, sans-serif; font-size: 10px; text-transform: uppercase; background: #555; border-bottom: solid 1px #aaa; padding: 5px; color: #fff;">
+<div class="container-fluid fixed-top"
+     style="font-family: Montserrat, Lato, sans-serif; font-size: 10px; text-transform: uppercase; background: #555; border-bottom: solid 1px #aaa; padding: 5px; color: #ddd;">
     Start
 </div>
-<div class="container">
-    <div class="jumbotron">
-        <div class="col-lg-10 mx-auto">
-            <h1>SACCO Users</h1>
-            <p class="lead">
-                There are currently 15 new members! 5 have just been elevated to shareholder status.
-            </p>
-            <div class="card" style="margin-bottom: 10px">
-                <div class="card-block">
-                    <h2>Add Member</h2>
-                    <p>Add a new Shareholder</p>
-                    <hr>
-                    <form class="form-group">
-                        <div class="input-group">
-                            <label for="inputSurname" class="form-check-label i">Surname</label>
-                            <input type="text" id="inputSurname" class="form-control" placeholder="First Name"
-                                   required="required"
-                                   autofocus="">
-                        </div>
 
-                        <div class="input-group ">
-                            <label for="inputOthername" class="form-check-label">Other Name</label>
-                            <input type="text" id="inputOthername" class="form-control" placeholder="Last Name"
-                                   required="required">
+<div class="container-fluid">
+    <div class="row">
+        <nav class="col-sm-2 bg-faded sidebar" style="padding-top: 40px">
+            <ul class="nav nav-pills flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Overview <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Members</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Loans</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Finance</a>
+                </li>
+            </ul>
+
+            <ul class="nav nav-pills flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Reports</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Statistics</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/trials/forms.html">Forms</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/trials/forms-controls.html">Forms Controls</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/trials/input-groups.html">Input</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Account</a>
+                </li>
+            </ul>
+        </nav>
+
+        <main class="col-sm-10" style="padding-top: 40px">
+            <div class="container">
+                <div class="col-lg-10 mx-auto">
+                    <section>
+                        <div>
+                            <h2>SACCO Users</h2>
+                            <p class="lead">
+                                There are currently 15 new members! 5 have just been elevated to shareholder status.
+                            </p>
+                            <hr>
                         </div>
-                        <button class="btn btn-lg btn-primary" type="submit">Add Member</button>
-                    </form>
+                        <div class="card" style="margin-bottom: 10px">
+                            <div class="card-block">
+                                <h2>Add Member</h2>
+                                <p>Add a new Shareholder</p>
+                                <hr>
+                                <form action="">
+                                    <div class="container">
+                                        <div class="form-group row">
+                                            <label for="surname" class="col-md-2 col-form-label">Surname</label>
+                                            <div class="col-md-10">
+                                                <input type="text" class="form-control" id="surname" name="surName"
+                                                       placeholder="First Name">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="othername" class="col-md-2 col-form-label">Othername</label>
+                                            <div class="col-md-10">
+                                                <input type="text" class="form-control" id="othername" name="otherName"
+                                                       placeholder="Last Name">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="offset-md-2 col-md-10">
+                                                <button type="submit" class="btn btn-default">Submit</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-block">
+                                <h2>All Members</h2>
+                                <p>List of Users currently registered</p>
+                                <div class="table-responsive">
+                                    <table class="table table-striped">
+                                        <thead>
+                                        <tr>
+                                            <th>Reg.No</th>
+                                            <th>Surname</th>
+                                            <th>Othername</th>
+                                            <th>Status</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>1,001</td>
+                                            <td>Mujjuzi</td>
+                                            <td>Castelli Sowed</td>
+                                            <td>Shareholder</td>
+                                            <td>
+                                                <div class="btn" role="button">
+                                                    <i class="ti-pencil-alt" style="font-size: 16px"></i>
+                                                </div>
+                                                <div class="btn" role="button">
+                                                    <i class="ti-trash" style="font-size: 16px"></i>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>1,002</td>
+                                            <td>Maldini</td>
+                                            <td>Paul</td>
+                                            <td>Shareholder</td>
+                                            <td>
+                                                <div class="btn" role="button">
+                                                    <i class="ti-pencil-alt" style="font-size: 16px"></i>
+                                                </div>
+                                                <div class="btn" role="button">
+                                                    <i class="ti-trash" style="font-size: 16px"></i>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>1,003</td>
+                                            <td>Costello</td>
+                                            <td>Madrisi</td>
+                                            <td>Member</td>
+                                            <td>
+                                                <div class="btn" role="button">
+                                                    <i class="ti-pencil-alt" style="font-size: 16px"></i>
+                                                </div>
+                                                <div class="btn" role="button">
+                                                    <i class="ti-trash" style="font-size: 16px"></i>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>1,003</td>
+                                            <td>Alessandro</td>
+                                            <td>Capcino</td>
+                                            <td>Member</td>
+                                            <td>
+                                                <div class="btn" role="button">
+                                                    <i class="ti-pencil-alt" style="font-size: 16px"></i>
+                                                </div>
+                                                <div class="btn" role="button">
+                                                    <i class="ti-trash" style="font-size: 16px"></i>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div>
+                            <h1>8. Validation Styles & Feedback Icons</h1>
+                            <p class="lead">Some points to remember.
+                                *In Bootstrap 4, we include validation styles for form controls with which we can convey
+                                these three validation states i.e. success, danger, or warning to the user.
+                                *These three classes are <code> .has-success </code>, <code> .has-warning </code>, and
+                                <code> .has-danger </code> which are applied to the parent element, so that any <code>
+                                    .col-form-label </code>, <code> .form-control </code>, and custom form elements
+                                nested within that element will inherit these validation styles. *We can include textual
+                                input controls by adding a <code> .form-control-success </code>, <code>
+                                    .form-control-warning </code>, or <code> .form-control-danger </code> class to the
+                                <code> .form-control </code> input field.
+                            </p>
+                            <hr>
+                        </div>
+                        <div class="card" style="margin-bottom: 10px">
+                            <div class="card-block">
+                                <h2>Form Title</h2>
+                                <p>Subtitle of this form</p>
+                                <hr>
+                                <div>
+                                    <div class="form-group has-success">
+                                        <label class="col-form-label" for="user_name8a">Success</label>
+                                        <input type="text" class="form-control form-control-success" id="user_name8a"
+                                               aria-describedby="user_nameStatus">
+                                        <div class="form-control-feedback">Welcome, User name found!</div>
+                                    </div>
+
+                                    <div class="form-group has-warning">
+                                        <label class="col-form-label" for="user_name8b">Warning</label>
+                                        <input type="text" class="form-control form-control-warning"
+                                               id="user_name8b" aria-describedby="buser_name2Status">
+                                        <div class="form-control-feedback">Please complete your registration, user name
+                                            is inactive...
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group has-danger">
+                                        <label class="col-form-label" for="user_name8c">Danger</label>
+                                        <input type="text" class="form-control form-control-danger" id="user_name8c"
+                                               aria-describedby="user_name3Status">
+                                        <div class="form-control-feedback">User name does not exists.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                 </div>
             </div>
-            <div class="card">
-                <div class="card-block">
-                    <h2>All Members</h2>
-                    <p>List of Users currently registered</p>
-                    <div class="table-responsive">
-                        <table class="table table-striped">
-                            <thead>
-                            <tr>
-                                <th>Reg.No</th>
-                                <th>Surname</th>
-                                <th>Othername</th>
-                                <th>Status</th>
-                                <th>Actions</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>1,001</td>
-                                <td>Mujjuzi</td>
-                                <td>Castelli Sowed</td>
-                                <td>Shareholder</td>
-                                <td>
-                                    <div class="btn btn-info" role="button">i</div>
-                                    <div class="btn btn-danger" role="button">&circlearrowleft;</div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>1,002</td>
-                                <td>Maldini</td>
-                                <td>Paul</td>
-                                <td>Shareholder</td>
-                                <td>
-                                    <div class="btn btn-info" role="button">i</div>
-                                    <div class="btn btn-danger" role="button">&circlearrowleft;</div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>1,003</td>
-                                <td>Costello</td>
-                                <td>Madrisi</td>
-                                <td>Member</td>
-                                <td>
-                                    <div class="btn btn-info" role="button">i</div>
-                                    <div class="btn btn-danger" role="button">&circlearrowleft;</div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>1,003</td>
-                                <td>Alessandro</td>
-                                <td>Capcino</td>
-                                <td>Member</td>
-                                <td>
-                                    <div class="btn btn-info" role="button">i</div>
-                                    <div class="btn btn-danger" role="button">&circlearrowleft;</div>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
+        </main>
     </div>
 </div>
-
-
+<br>
+<br>
 <script>
     //Fix to allow loading js libraries for electron
     if (typeof module === 'object') {
@@ -127,6 +249,15 @@
         module = window.undefined;
     }
     //Close the fix
+
+    let remote = require('electron').remote;
+    document.addEventListener('keydown', function (e) {
+        if (e.which === 123) {
+            remote.getCurrentWindow().webContents.openDevTools();
+        } else if (e.which === 116) {
+            location.reload();
+        }
+    });
     require('./js/persons');
 </script>
 </body>
