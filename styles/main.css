@@ -317,3 +317,20 @@ html.splash h4 {
         color: #000;
     }
 }
+
+input, button, select {
+    font-family: 'Sofia Pro Light', Lato, sans-serif;
+
+}
+
+::-webkit-input-placeholder {
+}
+
+input::-webkit-input-placeholder {
+
+}
+
+input:placeholder-shown {
+    /*border: inset 1 px #00ffff;*/
+
+}
