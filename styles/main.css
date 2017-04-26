@@ -320,7 +320,12 @@ html.splash h4 {
 
 input, button, select {
     font-family: 'Sofia Pro Light', Lato, sans-serif;
+    border-radius: 0 !important;
 
+}
+
+.form-control-feedback {
+    font-size: 10px;
 }
 
 ::-webkit-input-placeholder {
