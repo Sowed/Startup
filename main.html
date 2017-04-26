@@ -79,20 +79,31 @@
                                         <div class="form-group row">
                                             <label for="surname" class="col-md-2 col-form-label">Surname</label>
                                             <div class="col-md-10">
-                                                <input type="text" class="form-control" id="surname" name="surName"
-                                                       placeholder="First Name">
+                                                <input pattern="[/0/]" type="text"
+                                                       class="form-control form-control-lg"
+                                                       id="surname"
+                                                       name="surName"
+                                                       placeholder="First Name" maxlength="20" minlength="3"
+                                                       title="The Cultural name" required>
+                                                <div class="form-control-feedback"></div>
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label for="othername" class="col-md-2 col-form-label">Othername</label>
                                             <div class="col-md-10">
-                                                <input type="text" class="form-control" id="othername" name="otherName"
-                                                       placeholder="Last Name">
+                                                <input type="text"
+                                                       class="form-control form-control-lg"
+                                                       id="othername" name="otherName"
+                                                       placeholder="Last Name" required maxlength="20" minlength="3"
+                                                       title="The Religious and any other given name">
+                                                <div class="form-control-feedback"></div>
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <div class="offset-md-2 col-md-10">
-                                                <button type="submit" class="btn btn-default">Submit</button>
+                                                <button id="addNewPerson" type="submit"
+                                                        class="btn btn-outline-primary btn-lg col-6 col-lg-4">Submit
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
@@ -106,122 +117,25 @@
                                 <div class="table-responsive">
                                     <table class="table table-striped">
                                         <thead>
-                                        <tr>
-                                            <th>Reg.No</th>
+                                        <tr class="west">
+                                            <th>No.</th>
                                             <th>Surname</th>
                                             <th>Othername</th>
                                             <th>Status</th>
                                             <th>Actions</th>
                                         </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody id="loadPersons">
                                         <tr>
-                                            <td>1,001</td>
-                                            <td>Mujjuzi</td>
-                                            <td>Castelli Sowed</td>
-                                            <td>Shareholder</td>
-                                            <td>
-                                                <div class="btn" role="button">
-                                                    <i class="ti-pencil-alt" style="font-size: 16px"></i>
-                                                </div>
-                                                <div class="btn" role="button">
-                                                    <i class="ti-trash" style="font-size: 16px"></i>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>1,002</td>
-                                            <td>Maldini</td>
-                                            <td>Paul</td>
-                                            <td>Shareholder</td>
-                                            <td>
-                                                <div class="btn" role="button">
-                                                    <i class="ti-pencil-alt" style="font-size: 16px"></i>
-                                                </div>
-                                                <div class="btn" role="button">
-                                                    <i class="ti-trash" style="font-size: 16px"></i>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>1,003</td>
-                                            <td>Costello</td>
-                                            <td>Madrisi</td>
-                                            <td>Member</td>
-                                            <td>
-                                                <div class="btn" role="button">
-                                                    <i class="ti-pencil-alt" style="font-size: 16px"></i>
-                                                </div>
-                                                <div class="btn" role="button">
-                                                    <i class="ti-trash" style="font-size: 16px"></i>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>1,003</td>
-                                            <td>Alessandro</td>
-                                            <td>Capcino</td>
-                                            <td>Member</td>
-                                            <td>
-                                                <div class="btn" role="button">
-                                                    <i class="ti-pencil-alt" style="font-size: 16px"></i>
-                                                </div>
-                                                <div class="btn" role="button">
-                                                    <i class="ti-trash" style="font-size: 16px"></i>
-                                                </div>
+                                            <td colspan="5">
+                                                <h3 class="text-center" id="personsStatus">
+                                                    <i class="ti-timer"></i> loading</h3>
                                             </td>
                                         </tr>
                                         </tbody>
+                                        <tbody id="personsTableBody">
+                                        </tbody>
                                     </table>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section>
-                        <div>
-                            <h1>8. Validation Styles & Feedback Icons</h1>
-                            <p class="lead">Some points to remember.
-                                *In Bootstrap 4, we include validation styles for form controls with which we can convey
-                                these three validation states i.e. success, danger, or warning to the user.
-                                *These three classes are <code> .has-success </code>, <code> .has-warning </code>, and
-                                <code> .has-danger </code> which are applied to the parent element, so that any <code>
-                                    .col-form-label </code>, <code> .form-control </code>, and custom form elements
-                                nested within that element will inherit these validation styles. *We can include textual
-                                input controls by adding a <code> .form-control-success </code>, <code>
-                                    .form-control-warning </code>, or <code> .form-control-danger </code> class to the
-                                <code> .form-control </code> input field.
-                            </p>
-                            <hr>
-                        </div>
-                        <div class="card" style="margin-bottom: 10px">
-                            <div class="card-block">
-                                <h2>Form Title</h2>
-                                <p>Subtitle of this form</p>
-                                <hr>
-                                <div>
-                                    <div class="form-group has-success">
-                                        <label class="col-form-label" for="user_name8a">Success</label>
-                                        <input type="text" class="form-control form-control-success" id="user_name8a"
-                                               aria-describedby="user_nameStatus">
-                                        <div class="form-control-feedback">Welcome, User name found!</div>
-                                    </div>
-
-                                    <div class="form-group has-warning">
-                                        <label class="col-form-label" for="user_name8b">Warning</label>
-                                        <input type="text" class="form-control form-control-warning"
-                                               id="user_name8b" aria-describedby="buser_name2Status">
-                                        <div class="form-control-feedback">Please complete your registration, user name
-                                            is inactive...
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group has-danger">
-                                        <label class="col-form-label" for="user_name8c">Danger</label>
-                                        <input type="text" class="form-control form-control-danger" id="user_name8c"
-                                               aria-describedby="user_name3Status">
-                                        <div class="form-control-feedback">User name does not exists.</div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -244,22 +158,25 @@
 </script>
 <script src="js/jquery-3.2.0.js" type="text/javascript"></script>
 <script src="js/bootstrap.js" type="text/javascript"></script>
+</body>
 <script>
     if (window.module) {
         module = window.undefined;
     }
     //Close the fix
 
+    //Call person REST module
+    require('./js/persons');
+
+    //Add F5-Reload and F12-DevTools keyboard listeners
     let remote = require('electron').remote;
-    document.addEventListener('keydown', function (e) {
+    document.addEventListener('keydown', (e) => {
         if (e.which === 123) {
             remote.getCurrentWindow().webContents.openDevTools();
         } else if (e.which === 116) {
             location.reload();
         }
     });
-    require('./js/persons');
 </script>
-</body>
 
 </html>

@@ -88,8 +88,7 @@ function createMainWindow(splash) {
     });
 
     mainWindow.loadURL(url.format({
-        //pathname: path.join(__dirname, 'main.html'),
-        pathname: path.join(__dirname, './trials/forms.html'),
+        pathname: path.join(__dirname, 'main.html'),
         protocol: 'file:',
         slashes: true
     }));
