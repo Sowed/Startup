@@ -1,6 +1,10 @@
 //Initialize the database
 let Datastore = require('nedb');
-db = new Datastore({filename: './db/persons.db', autoload: true});
+db = new Datastore({
+    filename: './db/persons.db',
+    autoload: true,
+    timestampData: true,
+});
 
 //Add person to the db
 exports.addPerson = function (firstname, lastname) {
